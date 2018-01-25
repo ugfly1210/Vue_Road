@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <style>
+        ul li {
+            list-style: none;
+            display: inline-block;
+            border: 1px solid cornflowerblue;
+            height: 40px;
+            line-height: 40px;
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <ul>
+        <li v-on:click="switch1(true)">二维码登录</li>
+        <li v-on:click="switch1(false)">邮箱登录</li>
+    </ul>
+
+    <div v-show="temp">
+        <img src="me_ava.jpg" alt="">
+    </div>
+    <div v-show="!temp">
+        <form action="http://mail.163.com" method="post">
+            <p><input type="email"></p>
+            <p><input type="password"></p>
+            <p><input type="button" value="login"></p>
+        </form>
+    </div>
+
+</div>
+
+
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            temp:true
+        },
+        methods:{
+            switch1:function (t) {
+                this.temp=t
+            }
+        }
+    })
+</script>
+</body>
+</html>

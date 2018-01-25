@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+
+<div id="head">
+    <input type="text" v-model="msg">
+    <h3>{{ msg }}</h3>
+    <h2 v-text="msg"></h2>
+    <h1 v-html="input1"></h1>
+</div>
+
+
+<script>
+
+
+    new Vue({              // 建立vue对象
+        el:'#head',        // 这个标签之内的东西，使用vue才有效。
+        data:{
+            msg:"where are you",
+            input1:'<input type="button" value="woshi daibiaoqiand" >'
+        }
+    })
+
+</script>
+
+
+</body>
+</html>
+
+
+

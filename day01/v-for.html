@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="ly">
+    <ul>
+        <li v-for="(val,index) in arr">{{ val }}-->{{ index }}</li>
+    </ul>
+    <ul>
+        <li v-for="(val,key,index) in obj">{{ val }}-->{{ key }}-->{{ index }} </li>
+        <li v-for="(q,w) in obj">{{ q }}-->{{ w }}--> </li>
+        <li v-for="(q) in obj">{{ q }} </li>
+    </ul>
+    <ul>
+/////////////////////////////////////////////////////////////////////////////////////////
+        <li v-for="item in obj2">
+            {{ item.username }}
+            {{ item.age }}
+            {{ item.motto }}
+        </li>
+    </ul>
+    <input v-on:click="s" type="button" value="i'm liugay🐷🐷🐷 fk me. ">
+</div>
+
+<script>
+    var vm = new Vue({
+        el:"#ly",
+        data:{
+            arr:[1,2,3,4,5],
+            obj:{a:'刘牛批',b:"刘gay"},
+            obj2: [
+                {'username':'我是'+'  liugaye'},
+                {'age':'我今年'+18+'啦！！！哈哈哈'},
+                {'motto':'我的motto是 '+"基佬万岁！"}
+                ]
+            },
+    methods:{
+            s:function () {
+                this.arr.pop()
+            }
+    }
+    })
+</script>
+
+</body>
+</html>

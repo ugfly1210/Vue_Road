@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div>
+    <input type="text" placeholder="username" v-model="username">
+    <input type="number" placeholder="age" v-model="age">
+    <input type="button" value="确认添加" @click="add">
+</div>
+    <div>
+        <table border="1px" cellpadding="0">
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>索引</td>
+                <td>操作</td>
+            </tr>
+
+            <tr v-for="(item,index) in arr">
+                <td>{{ item.username }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ index }}</td>
+                <td><input type="button" value="删除" @click="del(index)"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            username:'',
+            age:'',
+            arr:[]
+        },
+        methods:{
+            add:function () {
+                this.arr.push({'username':this.username,'age':this.age})
+            },
+            del:function (index) {
+                // 删除用splice
+                this.arr.splice(index,1)
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>

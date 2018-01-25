@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<input class='vv' type="text">
+<p><span></span></p>
+
+</body>
+</html>
+
+
+<script>
+
+    var inva = $('.vv').val();
+    console.log(inva)
+    $('span').html(inva)
+</script>
+
+
+
+
+
+
+{#第一个参数是对象：el:'#app' 代表从这个参数开始，我们就可以使用vue了
+    第二个参数是变量：data:{
+                    msg : '1231232'
+                        }
+    #}
+
+
+
+
+{#
+引用类型存的是地址
+
+基本类型：String,Number,Null,Undefind,布尔
+引用类型：obj,数组array.
+
+堆栈：
+    堆里面：放引用类型的值
+    栈里面：放基本类型和引用类型的内存地址。
+
+#}

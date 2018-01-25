@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-foc>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{},
+        directives:{
+            foc:{  // 自定义指令的名字
+                inserted:function (t) {
+                    t.focus();
+                    t.style.backgroundColor = '#1232';
+                    t.style.color = 'yellow'
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

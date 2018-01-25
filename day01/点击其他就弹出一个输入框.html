@@ -1,0 +1,34 @@
+{#动态生成html标签#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="fruit">
+    <input type="checkbox" name="fruit">香蕉
+    <input type="checkbox" name="fruit">梨
+    <input type="checkbox" name="fruit" @click="func()">其他
+    <p v-show="ps" v-html="msg"></p>
+</div>
+
+<script>
+    new Vue({
+        el:"#fruit",
+        data:{
+            ps:false,
+            msg:"<input type='text'>"
+        },
+        methods:{
+            func:function () {
+                this.ps= !this.ps
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
